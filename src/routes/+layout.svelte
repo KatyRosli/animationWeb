@@ -3,6 +3,7 @@
 	import { page } from '$app/stores';
 	import { repositoryName } from '$lib/prismicio';
 	import "../app.css";
+	import '@fontsource-variable/dm-sans';
 </script>
 
 <svelte:head>
