@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
-	import { PrismicImage, PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
+	import { PrismicImage, PrismicText } from '@prismicio/svelte';
 
 	import Bounded from '$lib/components/Bounded.svelte';
 	import ButtonLink from '$lib/components/ButtonLink.svelte';
