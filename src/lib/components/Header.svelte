@@ -1,8 +1,8 @@
 <script>
 	import { PrismicLink } from '@prismicio/svelte';
 
-	/* import IconClose from '~icons/ph/x-bold';
-	import IconMenu from '~icons/ph/list-bold'; */
+	import IconClose from '~icons/ph/x-bold';
+	import IconMenu from '~icons/ph/list-bold';
 
 	import WordMark from './WordMark.svelte';
 	import ButtonLink from './ButtonLink.svelte';
@@ -42,7 +42,7 @@
 				aria-expanded={isOpen}
 				on:click={toggleOpen}
 			>
-				<!-- <IconMenu /> -->
+				<IconMenu />
 			</button>
 		</div>
 
@@ -59,7 +59,7 @@
 				class="block p-2 text-3xl text-white md:hidden"
 				on:click={toggleOpen}
 			>
-				<!-- <IconClose /> -->
+				<IconClose />
 			</button>
 			<ul class="grid justify-items-end gap-8">
 				{#each settings.data.navigation as item (item.label)}
