@@ -1,0 +1,49 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Pariatur laborum duis anim ex adipisicing irure est irure consequat non ad irure occaecat. Velit non duis aliqua aute fugiat dolor ea tempor laborum fugiat cupidatat duis amet velit ea. Cupidatat duis nulla reprehenderit quis esse."
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Magna sunt pariatur irure esse. Do ut duis et elit fugiat Lorem sint exercitation dolore."
+						}
+					}
+				]
+			},
+			"repeatablezone": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "npm",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

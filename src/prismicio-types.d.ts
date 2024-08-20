@@ -4,7 +4,12 @@ import type * as prismic from '@prismicio/client';
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type PageDocumentDataSlicesSlice = ShowcaseSlice | BentoSlice | HeroSlice | RichTextSlice;
+type PageDocumentDataSlicesSlice =
+	| IntegrationsSlice
+	| ShowcaseSlice
+	| BentoSlice
+	| HeroSlice
+	| RichTextSlice;
 
 /**
  * Content for Page documents
@@ -372,6 +377,83 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<'hero', HeroSliceVariation>;
 
 /**
+ * Item in *Integrations → Default → Primary → RepeatableZone*
+ */
+export interface IntegrationsSliceDefaultPrimaryRepeatablezoneItem {
+	/**
+	 * Icon field in *Integrations → Default → Primary → RepeatableZone*
+	 *
+	 * - **Field Type**: Select
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: integrations.default.primary.repeatablezone[].icon
+	 * - **Documentation**: https://prismic.io/docs/field#select
+	 */
+	icon: prismic.SelectField<'cloudflare' | 'npm' | 'github' | 'figma' | 'digitalocean' | 'fly'>;
+}
+
+/**
+ * Primary content in *Integrations → Default → Primary*
+ */
+export interface IntegrationsSliceDefaultPrimary {
+	/**
+	 * Heading field in *Integrations → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: integrations.default.primary.heading
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	heading: prismic.RichTextField;
+
+	/**
+	 * Body field in *Integrations → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: integrations.default.primary.body
+	 * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+	 */
+	body: prismic.RichTextField;
+
+	/**
+	 * RepeatableZone field in *Integrations → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: integrations.default.primary.repeatablezone[]
+	 * - **Documentation**: https://prismic.io/docs/field#group
+	 */
+	repeatablezone: prismic.GroupField<Simplify<IntegrationsSliceDefaultPrimaryRepeatablezoneItem>>;
+}
+
+/**
+ * Default variation for Integrations Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntegrationsSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<IntegrationsSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *Integrations*
+ */
+type IntegrationsSliceVariation = IntegrationsSliceDefault;
+
+/**
+ * Integrations Shared Slice
+ *
+ * - **API ID**: `integrations`
+ * - **Description**: Integrations
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntegrationsSlice = prismic.SharedSlice<'integrations', IntegrationsSliceVariation>;
+
+/**
  * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
@@ -629,6 +711,11 @@ declare module '@prismicio/client' {
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,
 			HeroSliceDefault,
+			IntegrationsSlice,
+			IntegrationsSliceDefaultPrimaryRepeatablezoneItem,
+			IntegrationsSliceDefaultPrimary,
+			IntegrationsSliceVariation,
+			IntegrationsSliceDefault,
 			RichTextSlice,
 			RichTextSliceDefaultPrimary,
 			RichTextSliceVariation,
