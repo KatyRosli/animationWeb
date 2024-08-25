@@ -22,4 +22,12 @@
 			{/each}
 		</ul>
   </nav>
+  <div class="flex flex-col items-center py-8">
+    <a href="https://github.com/KatyRosli/animationWeb" target="_blank" rel="noopener noreferrer">
+      Open sourced on Github by
+    </a> 
+    <a href="https://www.katyrosli.com" target="_blank" rel="noopener noreferrer" class="">
+      Katy Rosli
+    </a>
+  </div>
 </footer>
